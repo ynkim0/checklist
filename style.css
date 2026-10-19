@@ -1,0 +1,93 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #9aa5b1;
+  --accent: #3b82f6;
+  --border: #e4e7eb;
+  --danger: #e5484d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171c;
+    --card: #1e232b;
+    --text: #e6e9ee;
+    --muted: #6b7684;
+    --border: #2d343f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  height: fit-content;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 20px;
+}
+
+h1 { margin: 0; font-size: 22px; }
+.date { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.progress { margin: 8px 0 20px; font-size: 14px; font-weight: 600; color: var(--accent); }
+
+.form { display: flex; gap: 8px; margin-bottom: 16px; }
+.form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 16px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.form input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.form button {
+  padding: 0 16px;
+  font-size: 15px;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.list { list-style: none; margin: 0; padding: 0; }
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: 0; }
+.item input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent); cursor: pointer; }
+.item span { flex: 1; word-break: break-word; }
+.item.done span { color: var(--muted); text-decoration: line-through; }
+.item button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.item button:hover { color: var(--danger); }
+
+.empty { text-align: center; color: var(--muted); margin: 24px 0 8px; }
